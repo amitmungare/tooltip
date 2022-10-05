@@ -1,38 +1,104 @@
+/* getting the app data in center  */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* this is the css for all the buttons  */
+button{
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 10px;
+  border: none;
+  background-color: aqua;
+  border-radius: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* css for the hover over data  */
+.tooltip-hov{
+  position: absolute;
+  top:20%;
+  left:43.5%;
+  background-color: aquamarine;
+}
+/* setting css for the tip */
+.left,.top,.bottom,.right{
+  position:absolute;
+  border-radius: 8px;
+  text-align: center;
+  background-color: coral;
+  padding: 10px;
+}
+/* when the left side is selected to show the tip */
+.left{
+  left:-100px;
+  top:3%;
+}
+/* when the top side is selected  to show the tip */
+.top{
+  left:18%;
+  top:-45px;
+}
+/* when the bottom side is selected  to show the tip */
+.bottom{
+  left:10%;
+  top:45px;
+}
+/* when the right side is selected  to show the tip */
+.right{
+  left:140px;
+  top:-40%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* arrow icon to display in bottom */
+.bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent coral transparent;
+}
+/* arrow icon to display in top */
+.top::after {
+  content: " ";
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: coral transparent transparent transparent;
+}
+/* arrow icon to display in right */
+.right::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; 
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent coral transparent transparent;
+}
+/* arrow icon to display in left */
+.left::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; 
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent coral;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+/* when the screen size is less then 500px apply this css */
+@media screen and (max-width:500px) {
+  .tooltip-hov{
+    top:30%;
+    left:30%;
   }
 }
